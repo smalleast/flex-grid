@@ -58,7 +58,6 @@ $grid-padding-width: 10px !default;
 //mixin end
 .row {
   @include display-flex();
-  padding: ($grid-padding-width / 2);
   width: 100%;
 }
 
