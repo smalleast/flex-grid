@@ -1,5 +1,6 @@
 //mixin start
 $grid-padding-width: 10px !default;
+
 @mixin display-flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -31,14 +32,17 @@ $grid-padding-width: 10px !default;
     -webkit-box-align: start;
     -ms-flex-align: start;
   }
+
   @else if $value==flex-end {
     -webkit-box-align: end;
     -ms-flex-align: end;
   }
+
   @else {
     -webkit-box-align: $value;
     -ms-flex-align: $value;
   }
+
   -webkit-align-items: $value;
   -moz-align-items: $value;
   align-items: $value;
@@ -47,15 +51,19 @@ $grid-padding-width: 10px !default;
 @mixin align-self($value: auto) {
   -webkit-align-self: $value;
   -moz-align-self: $value;
+
   @if $value==flex-start {
     -ms-flex-item-align: start;
   }
+
   @else if $value==flex-end {
     -ms-flex-item-align: end;
   }
+
   @else {
     -ms-flex-item-align: $value;
   }
+
   align-self: $value;
 }
 
@@ -68,7 +76,7 @@ $grid-padding-width: 10px !default;
 //mixin end
 .row {
   @include display-flex();
-  padding: ($grid-padding-width / 2);
+  padding: 0;
   width: 100%;
 }
 
@@ -76,17 +84,6 @@ $grid-padding-width: 10px !default;
   @include flex-wrap(wrap);
 }
 
-.row-no-padding {
-  padding: 0;
-  >.col {
-    padding: 0;
-  }
-}
-
-.row+.row {
-  margin-top: ($grid-padding-width / 2) * -1;
-  padding-top: 0;
-}
 
 .col {
   @include flex(1);
@@ -330,36 +327,42 @@ $grid-padding-width: 10px !default;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
   }
+
   &-center {
     display: flex;
     display: -webkit-flex;
     justify-content: center;
     -webkit-justify-content: center;
   }
+
   &-right {
     display: flex;
     display: -webkit-flex;
     justify-content: flex-end;
     -webkit-justify-content: flex-end;
   }
+
   &-top {
     display: flex;
     display: -webkit-flex;
     align-items: flex-start;
     -webkit-align-items: flex-start;
   }
+
   &-middle {
     display: flex;
     display: -webkit-flex;
     align-items: center;
     -webkit-align-items: center;
   }
+
   &-bottom {
     display: flex;
     display: -webkit-flex;
     align-items: flex-end;
     -webkit-align-items: flex-end;
   }
+
   &-left-top {
     display: flex;
     display: -webkit-flex;
@@ -368,6 +371,7 @@ $grid-padding-width: 10px !default;
     align-items: flex-start; //垂直方向
     -webkit-align-items: flex-start;
   }
+
   &-left-center {
     display: flex;
     display: -webkit-flex;
@@ -376,6 +380,7 @@ $grid-padding-width: 10px !default;
     align-items: center;
     -webkit-align-items: center;
   }
+
   &-left-bottom {
     display: flex;
     display: -webkit-flex;
@@ -384,6 +389,7 @@ $grid-padding-width: 10px !default;
     align-items: flex-end;
     -webkit-align-items: flex-end;
   }
+
   &-center-top {
     display: flex;
     display: -webkit-flex;
@@ -392,6 +398,7 @@ $grid-padding-width: 10px !default;
     align-items: flex-start;
     -webkit-align-items: flex-start;
   }
+
   &-center-center {
     display: flex;
     display: -webkit-flex;
@@ -400,6 +407,7 @@ $grid-padding-width: 10px !default;
     align-items: center;
     -webkit-align-items: center;
   }
+
   &-center-bottom {
     display: flex;
     display: -webkit-flex;
@@ -408,6 +416,7 @@ $grid-padding-width: 10px !default;
     align-items: flex-end;
     -webkit-align-items: flex-end;
   }
+
   &-right-top {
     display: flex;
     display: -webkit-flex;
@@ -416,6 +425,7 @@ $grid-padding-width: 10px !default;
     align-items: flex-start;
     -webkit-align-items: flex-start;
   }
+
   &-right-center {
     display: flex;
     display: -webkit-flex;
@@ -424,6 +434,7 @@ $grid-padding-width: 10px !default;
     align-items: center;
     -webkit-align-items: center;
   }
+
   &-right-bottom {
     display: flex;
     display: -webkit-flex;
@@ -438,18 +449,23 @@ $grid-padding-width: 10px !default;
   &l {
     text-align: left;
   }
+
   &c {
     text-align: center;
   }
+
   &r {
     text-align: right;
   }
+
   &t {
     vertical-align: top;
   }
+
   &m {
     vertical-align: middle;
   }
+
   &b {
     vertical-align: bottom;
   }
